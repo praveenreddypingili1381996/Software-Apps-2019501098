@@ -1,0 +1,10 @@
+.col-sm-4 {
+    @extend %praveen ;
+    
+
+
+}
+%praveen{
+    border : 3px solid blue;
+
+}

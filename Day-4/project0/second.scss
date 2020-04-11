@@ -1,0 +1,20 @@
+$z:yellow;
+body {
+  background-color:$z;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+      
+          
+            table,td,th {
+                text-align:center;
+                background-color:bisque;
+                border:4px solid black;
+                border-collapse: collapse;
+            }
+       
