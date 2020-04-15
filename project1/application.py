@@ -34,6 +34,6 @@ def register():
         print(email)
         password = request.form.get("psw")
         print(password)
-        return render_template("email.html")
+        return render_template("email.html",name=email)
     return render_template("register.html") 
     
