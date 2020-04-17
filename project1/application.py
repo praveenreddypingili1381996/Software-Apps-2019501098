@@ -30,7 +30,7 @@ db.init_app(app)
 
 @app.route("/")
 def index():
-    return render_template("index.html") 
+    return render_template("register.html") 
 
 
 @app.route("/register",methods=["GET","POST"])
@@ -41,10 +41,28 @@ def register():
         #print(email)
         password = request.form.get("psw")
         #print(password)
-        return render_template("email.html",name=email)
+       
+        if not email:
+            text = "Please enter username to register"
+            return render_template("email.html", name=text, msg="ERROR")
+        elif not password:
+            text="Please provide the password"
+            return render_template("email.html", name=text ,msg="ERROR")
+        else:
+            # text = "Success"
+            dt = datetime.datetime.now()
+            data = Data(username=email,password=password,timestamp=dt)
+            db.session.add(data)
+            db.session.commit()
+            return render_template("email.html",msg="SUCCESS")
+        
     return render_template("register.html") 
 
 
+@app.route("/admin")
+def admin():
+    data1 = Data.query.all()
+    return render_template("users.html", name=data1)
 
 def main():
     app.app_context().push()
