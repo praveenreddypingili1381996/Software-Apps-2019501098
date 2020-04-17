@@ -38,9 +38,9 @@ def register():
     if (request.method == "POST"):
        
         email = request.form.get("email")
-        #print(email)
+        
         password = request.form.get("psw")
-        #print(password)
+        
        
         if not email:
             text = "Please enter username to register"
