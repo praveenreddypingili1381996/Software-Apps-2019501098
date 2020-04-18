@@ -56,7 +56,7 @@ def register():
             db.session.commit()
             return render_template("email.html",msg="SUCCESS")
         
-    return render_template("register.html") 
+    return render_template("register.html")     
 
 
 @app.route("/admin")
