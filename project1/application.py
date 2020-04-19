@@ -50,9 +50,11 @@ def register():
         if not email:
             text = "Please enter username to register"
             return render_template("email.html", name=text, msg="ERROR")
+
         elif not password:
             text="Please provide the password"
             return render_template("email.html", name=text ,msg="ERROR")
+            
         else:
             # text = "Success"
             dt = datetime.datetime.now()
@@ -61,7 +63,10 @@ def register():
             db.session.commit()
             return render_template("email.html",msg="SUCCESS")
         
-    return render_template("register.html",flag=True)     
+    return render_template("register.html",flag=True)   
+
+
+
 
 
 @app.route("/admin")
@@ -84,16 +89,25 @@ def userhome():
     if (request.method == "GET"):
         return redirect(url_for('register'))
 
+
+
+
 @app.route("/logout")
 def sessiontimeout():
     session.pop("username",None)
     return redirect(url_for('register'))
 
+
+
+
 @app.route("/user")
 def user():
     if session.get("username") is not None:
         return render_template("auth.html")
-    return redirect(url_for('register'))    
+    return redirect(url_for('register')) 
+
+
+
 
 def main():
     app.app_context().push()
