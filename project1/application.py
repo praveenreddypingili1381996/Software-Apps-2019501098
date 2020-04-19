@@ -54,7 +54,7 @@ def register():
         elif not password:
             text="Please provide the password"
             return render_template("email.html", name=text ,msg="ERROR")
-            
+
         else:
             # text = "Success"
             dt = datetime.datetime.now()
@@ -92,10 +92,13 @@ def userhome():
 
 
 
+
+
 @app.route("/logout")
 def sessiontimeout():
     session.pop("username",None)
     return redirect(url_for('register'))
+
 
 
 
