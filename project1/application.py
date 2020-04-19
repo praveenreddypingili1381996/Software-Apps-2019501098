@@ -103,11 +103,12 @@ def  sessiontimeout():
 
 
 
-@app.route("/user")
-def user():
-    if session.get("username") is not None:
-        return render_template("auth.html")
-    return redirect(url_for('register')) 
+@app.route( "/user")
+def  user():
+    if  session.get("username") is not None:
+
+        return render_template( "auth.html")
+    return redirect(url_for( "register")) 
 
 
 
