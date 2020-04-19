@@ -94,10 +94,10 @@ def userhome():
 
 
 
-@app.route("/logout")
-def sessiontimeout():
-    session.pop("username",None)
-    return redirect(url_for('register'))
+@app.route ("/logout")
+def  sessiontimeout():
+    session.pop('username',None)
+    return redirect(url_for("register"))
 
 
 
