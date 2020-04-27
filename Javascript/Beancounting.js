@@ -28,13 +28,5 @@ function countChar(string, character) {
     return result;
 } 
 
-    
-    
-    
-    
-    }
-    
-    }
-    
     console.log(countBs("BcBBk"));
     console.log(countChar("kakkerkayukkk", "k"))
