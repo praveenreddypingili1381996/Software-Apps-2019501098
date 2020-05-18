@@ -4,6 +4,9 @@ import {Constants} from 'expo'
 
 let id = 0
 
+
+
+
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
@@ -13,15 +16,18 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   button: {
-    width:'20%',
+    width:'30%',
   },
   textinput: {
     padding:5,
-    borderColor:'black',
+    borderColor:'blue',
     borderWidth:2,
-    width:'75%',
+    width:'95%',
   }
 })
+
+
+
 
 const Todo = props => (
   <View style={styles.container}>
@@ -29,6 +35,9 @@ const Todo = props => (
     <Text>{props.todo.text}</Text>
   </View>
 )
+
+
+
 
 export default class App extends React.Component {
   constructor() {
@@ -39,9 +48,15 @@ export default class App extends React.Component {
     }
   }
 
+
+
+
   handleText = (text) => {
     this.setState({task:text})
   }
+
+
+
 
   addTodo() {
     if (this.state.task != "") {
@@ -56,12 +71,18 @@ export default class App extends React.Component {
     }
   }
 
+
+
+
   removeTodo(id) {
     this.setState({
       todos: this.state.todos.filter(todo => todo.id !== id)
     })
   }
 
+
+
+  
   render() {
     return (
       <View style={[styles.part]}>
